@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframes TechSisters</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf3 100%);
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        .header h1 {
+            color: #c084fc;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #6b7280;
+            font-size: 16px;
+        }
+        
+        .wireframes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .wireframe {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        .wireframe-title {
+            color: #c084fc;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f3e8ff;
+        }
+        
+        .screen {
+            border: 3px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 30px;
+            background: #fefefe;
+            min-height: 500px;
+        }
+        
+        /* Pantalla 1: Inicio */
+        .logo-box {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .welcome-text {
+            text-align: center;
+            font-size: 24px;
+            color: #c084fc;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #6b7280;
+            font-size: 16px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .btn-primary {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: #c084fc;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .btn-secondary {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: white;
+            color: #c084fc;
+            border: 2px solid #c084fc;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        /* Pantalla 2: Registro */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            color: #4b5563;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            font-size: 14px;
+            background: #fafafa;
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            cursor: pointer;
+            background: #fafafa;
+        }
+        
+        .radio-option.selected {
+            border-color: #c084fc;
+            background: #f3e8ff;
+        }
+        
+        .radio-circle {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #c084fc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .radio-circle-inner {
+            width: 10px;
+            height: 10px;
+            background: #c084fc;
+            border-radius: 50%;
+        }
+        
+        /* Pantalla 3: Perfil */
+        .profile-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+        }
+        
+        .profile-name {
+            font-size: 22px;
+            color: #1f2937;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .profile-role {
+            color: #c084fc;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .info-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fafafa;
+            border-radius: 8px;
+            border-left: 4px solid #c084fc;
+        }
+        
+        .info-title {
+            font-size: 13px;
+            color: #6b7280;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        
+        .info-content {
+            color: #1f2937;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        /* Pantalla 4: Calendario */
+        .event-card {
+            background: #fafafa;
+            border-radius: 8px;
+            padding: 18px;
+            margin-bottom: 15px;
+            border-left: 4px solid #c084fc;
+        }
+        
+        .event-date {
+            color: #c084fc;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .event-title {
+            color: #1f2937;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        
+        .event-desc {
+            color: #6b7280;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+        
+        .btn-small {
+            padding: 8px 16px;
+            background: #c084fc;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        /* Pantalla 5: Emparejamiento */
+        .mentor-card {
+            background: #fafafa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 2px solid #e5e7eb;
+        }
+        
+        .mentor-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .mentor-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .mentor-info {
+            flex: 1;
+        }
+        
+        .mentor-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 4px;
+        }
+        
+        .mentor-specialty {
+            font-size: 13px;
+            color: #c084fc;
+            font-weight: 600;
+        }
+        
+        .match-score {
+            background: #c084fc;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        
+        .mentor-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+        
+        .tag {
+            background: #f3e8ff;
+            color: #c084fc;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .wireframe {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 TechSisters - Wireframes de Baja Fidelidad</h1>
+            <p>Prototipo visual de plataforma de mentoría para mujeres en tecnología</p>
+        </div>
+        
+        <div class="wireframes-grid">
+            <!-- Pantalla 1: Inicio -->
+            <div class="wireframe">
+                <div class="wireframe-title">1. Pantalla de Inicio</div>
+                <div class="screen">
+                    <div class="logo-box">TS</div>
+                    <div class="welcome-text">TechSisters</div>
+                    <div class="subtitle">Conecta, aprende y crece junto a<br>otras mujeres en tecnología</div>
+                    <button class="btn-primary">Iniciar sesión</button>
+                    <button class="btn-secondary">Registrarse</button>
+                </div>
+            </div>
+            
+            <!-- Pantalla 2: Registro -->
+            <div class="wireframe">
+                <div class="wireframe-title">2. Registro de Usuarias</div>
+                <div class="screen">
+                    <div class="welcome-text" style="font-size: 20px; margin-bottom: 25px;">Crear cuenta</div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Tipo de usuario</label>
+                        <div class="radio-group">
+                            <div class="radio-option selected">
+                                <div class="radio-circle"><div class="radio-circle-inner"></div></div>
+                                <span>Estudiante</span>
+                            </div>
+                            <div class="radio-option">
+                                <div class="radio-circle"></div>
+                                <span>Mentora</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Nombre completo</label>
+                        <input type="text" class="form-input" placeholder="Ingresa tu nombre">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Área de interés</label>
+                        <input type="text" class="form-input" placeholder="Ej: Desarrollo Web, IA, Ciberseguridad">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Nivel de experiencia</label>
+                        <input type="text" class="form-input" placeholder="Principiante / Intermedio / Avanzado">
+                    </div>
+                    
+                    <button class="btn-primary" style="margin-top: 20px;">Crear cuenta</button>
+                </div>
+            </div>
+            
+            <!-- Pantalla 3: Perfil de Mentora -->
+            <div class="wireframe">
+                <div class="wireframe-title">3. Perfil de Mentora</div>
+                <div class="screen">
+                    <div class="profile-header">
+                        <div class="profile-pic">MG</div>
+                        <div class="profile-name">María González</div>
+                        <div class="profile-role">Mentora Senior</div>
+                    </div>
+                    
+                    <div class="info-section">
+                        <div class="info-title">Descripción</div>
+                        <div class="info-content">Ingeniera de Software con 8 años de experiencia en desarrollo full-stack y liderazgo de equipos tecnológicos.</div>
+                    </div>
+                    
+                    <div class="info-section">
+                        <div class="info-title">Especialidad</div>
+                        <div class="info-content">Desarrollo Web, JavaScript, React, Node.js</div>
+                    </div>
+                    
+                    <div class="info-section">
+                        <div class="info-title">Disponibilidad</div>
+                        <div class="info-content">Lunes y Miércoles: 18:00 - 20:00<br>Sábados: 10:00 - 12:00</div>
+                    </div>
+                    
+                    <button class="btn-primary">Solicitar mentoría</button>
+                </div>
+            </div>
+            
+            <!-- Pantalla 4: Calendario de Talleres -->
+            <div class="wireframe">
+                <div class="wireframe-title">4. Calendario de Talleres</div>
+                <div class="screen">
+                    <div class="welcome-text" style="font-size: 20px; margin-bottom: 25px;">Próximos talleres</div>
+                    
+                    <div class="event-card">
+                        <div class="event-date">📅 15 NOV 2025 • 18:00 hrs</div>
+                        <div class="event-title">Introducción a Python</div>
+                        <div class="event-desc">Aprende los fundamentos de Python desde cero</div>
+                        <button class="btn-small">Inscribirse</button>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-date">📅 20 NOV 2025 • 19:00 hrs</div>
+                        <div class="event-title">Diseño UX/UI para principiantes</div>
+                        <div class="event-desc">Conoce los principios básicos del diseño centrado en el usuario</div>
+                        <button class="btn-small">Inscribirse</button>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-date">📅 25 NOV 2025 • 17:30 hrs</div>
+                        <div class="event-title">Ciberseguridad: primeros pasos</div>
+                        <div class="event-desc">Introducción a la seguridad informática y buenas prácticas</div>
+                        <button class="btn-small">Inscribirse</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pantalla 5: Emparejamiento -->
+            <div class="wireframe">
+                <div class="wireframe-title">5. Emparejamiento de Mentoras</div>
+                <div class="screen">
+                    <div class="welcome-text" style="font-size: 20px; margin-bottom: 25px;">Mentoras sugeridas</div>
+                    
+                    <div class="mentor-card">
+                        <div class="mentor-header">
+                            <div class="mentor-avatar">CP</div>
+                            <div class="mentor-info">
+                                <div class="mentor-name">Carolina Pérez</div>
+                                <div class="mentor-specialty">Desarrolladora Backend</div>
+                            </div>
+                            <div class="match-score">95% match</div>
+                        </div>
+                        <div class="mentor-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Django</span>
+                            <span class="tag">APIs</span>
+                        </div>
+                        <button class="btn-small">Ver perfil</button>
+                    </div>
+                    
+                    <div class="mentor-card">
+                        <div class="mentor-header">
+                            <div class="mentor-avatar">LS</div>
+                            <div class="mentor-info">
+                                <div class="mentor-name">Laura Silva</div>
+                                <div class="mentor-specialty">Data Scientist</div>
+                            </div>
+                            <div class="match-score">88% match</div>
+                        </div>
+                        <div class="mentor-tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                        <button class="btn-small">Ver perfil</button>
+                    </div>
+                    
+                    <div class="mentor-card">
+                        <div class="mentor-header">
+                            <div class="mentor-avatar">AR</div>
+                            <div class="mentor-info">
+                                <div class="mentor-name">Ana Rojas</div>
+                                <div class="mentor-specialty">Diseñadora UX/UI</div>
+                            </div>
+                            <div class="match-score">82% match</div>
+                        </div>
+                        <div class="mentor-tags">
+                            <span class="tag">Figma</span>
+                            <span class="tag">Investigación</span>
+                            <span class="tag">Prototipado</span>
+                        </div>
+                        <button class="btn-small">Ver perfil</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
